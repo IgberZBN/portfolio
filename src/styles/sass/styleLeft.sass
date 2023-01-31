@@ -1,0 +1,37 @@
+@use 'mixinsLeft'
+// @use 'colorScheme1'
+@use 'colorScheme2'
+
+.left
+    @include mixinsLeft.display
+    @include mixinsLeft.anchor
+    background-color: colorScheme2.$color-1
+    text-align: center
+
+    &-header
+
+        &-img
+            @include mixinsLeft.avatar
+            margin-bottom: 20px
+
+        &-title
+            @include mixinsLeft.title
+
+    &-footer
+        @include mixinsLeft.link
+
+        &-link
+            margin: 7px
+            font-size: 26px
+
+        p a
+            text-decoration: underline dotted
+
+        @include mixinsLeft.piper
+            span
+                display: none
+            .linkRef
+                display: block
+
+    @include mixinsLeft.tabletAbove
+        display: none
