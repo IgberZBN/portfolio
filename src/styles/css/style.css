@@ -18,7 +18,7 @@
 }
 .left-header-img img {
   border-radius: 50%;
-  width: clamp(150px, 10vw, 220px);
+  width: clamp(150px, 15vw, 220px);
 }
 .left-header-title {
   font-size: clamp(28px, 3vw, 42px);
@@ -48,7 +48,7 @@
     display: block;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 807px) {
   .left {
     display: none;
   }
