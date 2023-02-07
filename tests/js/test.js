@@ -1,3 +1,4 @@
+// Mudar o valor do data-js-status
 export default function jsStatus() {
   const status = document.querySelectorAll('[data-js-status]');
   status.forEach((element) => {
