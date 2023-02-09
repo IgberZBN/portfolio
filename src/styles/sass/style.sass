@@ -1,46 +1,30 @@
-// ! RESET 
+// ! RESET
+@use 'variables' as va
+@use 'menu'
+
 *
     font-family: 'Roboto Condensed', sans-serif
     padding: 0
     margin: 0
     box-sizing: border-box
 
+body
+    background: url('../../../public/assets/img/background.jpg') no-repeat center center
+    background-size: cover
+    overflow-x: hidden
+
 .container
-    display: flex
-    img
-        width: 220px
-    .left
-        display: none
+    display: grid
+    grid-template-columns: va.$columns-10
+    grid-template-rows: va.$rows-5
 
-    .left.active
-        display: block
-    .hero
-        background-color: red
-        width: 40vw
-        height: 100vh
-        position: sticky
-        top: 0
-        left: 0
-    .right
-        background-color: blue
-        widith: 60vw
-        height: 2000px
-    .footer
-        width: 21.82vw
-        height: 100px
-        background-color: yellow
-        position: fixed
-        bottom: 0
-        left: 0
+@media (max-width: 999px)
+    .container
+        display: flex
+        flex-direction: column
 
-        // display: none
 button
-    margin: 20px
+    // display: none
     position: fixed
-    top: 0
     right: 0
-    padding: 10px
-    border-radius: 7px
-    border: none
-    background-color: green
-    cursor: pointer
+    z-index: 1
