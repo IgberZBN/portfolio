@@ -1,21 +1,23 @@
-// toggle de menu
 export default class MobileNavbar {
-  constructor(button, menu) {
+  constructor(button, menu, link) {
     this.button = document.querySelector(button);
-    this.menu = document.querySelectorAll(menu);
+    this.menu = document.querySelector(menu);
+    this.link = document.querySelectorAll(link);
     this.activeClass = 'active';
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.menu.forEach((item) => {
-      item.classList.toggle(this.activeClass);
-    });
+    this.menu.classList.toggle(this.activeClass);
+    this.button.classList.toggle(this.activeClass);
   }
 
   addClickEvent() {
     this.button.addEventListener('click', this.handleClick);
+    this.link.forEach((link) => {
+      link.addEventListener('click', this.handleClick);
+    });
   }
 
   init() {

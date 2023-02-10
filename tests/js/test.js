@@ -1,7 +1,20 @@
 // Mudar o valor do data-js-status
-export default function jsStatus() {
-  const status = document.querySelectorAll('[data-js-status]');
-  status.forEach((element) => {
-    element.setAttribute('data-js-status', 'js');
-  });
+export default class JsStatus {
+  constructor(data) {
+    this.data = document.querySelectorAll(data);
+    this.status = 'on-js';
+  }
+
+  handleStatus() {
+    this.data.forEach((element) => {
+      element.setAttribute('data-js-status', this.status);
+    });
+  }
+
+  init() {
+    if (this.data) {
+      this.handleStatus();
+    }
+    return this;
+  }
 }

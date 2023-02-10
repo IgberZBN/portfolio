@@ -1,0 +1,37 @@
+@use 'variables' as va
+@use 'mixins' as mx
+@use 'breakpoints' as bp
+
+.footer
+    @include mx.menu
+    @include mx.flex
+    grid-column: 1 / 4
+    &-social
+        align-self: center
+        ul
+            @include mx.listReset
+            justify-content: center
+            width: 155.125px
+            padding: 3px 0
+            height: 40px
+            li
+                margin: 0 12px
+                font-size: 28px
+        a
+            color: va.$white
+            transition: .3s
+            &:hover
+                font-size: 30px
+                color: rgba(255, 255, 255, .8)
+    &-text
+        span
+            display: block
+        a
+            color: va.$white
+            text-decoration: none
+            &:hover
+                text-decoration: underline dotted
+
+@include bp.mobileView
+    .footer
+        position: static

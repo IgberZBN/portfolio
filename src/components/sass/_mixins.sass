@@ -1,0 +1,26 @@
+@use 'variables' as va
+
+@mixin menu
+    background-color: va.$dark-purple
+    padding: va.$pad
+    position: sticky
+    top: 0
+    left: 0
+    text-align: center
+    color: va.$white
+
+@mixin flex
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+@mixin listReset
+    list-style: none
+    display: flex
+
+@mixin xButton
+    width: 32px
+    height: 2px
+    background: #fff
+    margin: 8px
+    display: block

@@ -1,13 +1,12 @@
 @use 'variables' as va
 @use 'mixins' as mx
+@use 'breakpoints' as bp
 
 .hero
     @include mx.menu
+    @include mx.flex
     grid-column: 1 / 4
     grid-row: 1 / 5
-    display: flex
-    flex-direction: column
-    justify-content: space-around
     &-image
         width: clamp(150px, 15vw, 220px)
         border-radius: 50%
@@ -17,8 +16,7 @@
             font-size: 22px
     &-nav
         ul
-            list-style: none
-            display: flex
+            @include mx.listReset
             flex-direction: column
             justify-content: space-between
             height: clamp(200px, 14.7vw, 300px)
@@ -30,7 +28,7 @@
                 text-decoration: none
                 color: va.$white
                 &:hover
-                    color: rgba(255, 255, 255, .6)
+                    color: rgba(255, 255, 255, .8)
                     &:after
                         opacity: 2
                         content: ""
@@ -46,7 +44,7 @@
                     height: 3px
                     display: block
 
-@media (max-width: 999px)
+@include bp.mobileView
     .hero
         position: fixed
         width: 100vw
@@ -55,43 +53,3 @@
         transition: transform .3s ease-in
     .hero.active
         transform: translateX(0)
-
-.footer
-    @include mx.menu
-    grid-column: 1 / 4
-    display: flex
-    flex-direction: column
-    justify-content: space-around
-    %test
-        color: white
-
-    &-social
-        align-self: center
-        ul
-            list-style: none
-            display: flex
-            justify-content: center
-            width: 155.125px
-            padding: 3px 0
-            height: 40px
-            li
-                margin: 0 12px
-                font-size: 28px
-        a
-            @extend %test
-            transition: .3s
-            &:hover
-                font-size: 30px
-                color: rgba(255, 255, 255, .8)
-    &-text
-        span
-            display: block
-        a
-            @extend %test
-            text-decoration: none
-            &:hover
-                text-decoration: underline dotted
-
-@media (max-width: 999px)
-    .footer
-        position: static

@@ -16,12 +16,14 @@
     <title>Document</title>
 </head>
 
-<body class="no-js">
+<body data-js-status="no-js">
     <!-- ! container -->
-    <button class="mobile-menu"> click on me</button>
+    <button class="button-menu">
+        <div class="button-menu-bar"></div>
+    </button>
     <div class="container">
         <!-- ! header -->
-        <header class="left hero">
+        <header class="left hero menu" data-menu="off">
             <div class="tes">
                 <img class="hero-image" src="assets/img/avatar.jpeg" alt="Avatar">
                 <h1 class="hero-title">
@@ -34,16 +36,16 @@
             <nav class="hero-nav">
                 <ul>
                     <li>
-                        <a class="active" href="#about">Sobre mim</a>
+                        <a class="hero-nav-link" href="#about">Sobre mim</a>
                     </li>
                     <li>
-                        <a class="" href="#projects">Projetos</a>
+                        <a class="hero-nav-link" href="#projects">Projetos</a>
                     </li>
                     <li>
-                        <a class="" href="#skills">Habilidades</a>
+                        <a class="hero-nav-link" href="#skills">Habilidades</a>
                     </li>
                     <li>
-                        <a class="" href="#contact">Contato</a>
+                        <a class="hero-nav-link" href="#contact">Contato</a>
                     </li>
                 </ul>
             </nav>

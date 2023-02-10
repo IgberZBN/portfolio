@@ -1,7 +1,14 @@
-// ! RESET
-@use 'variables' as va
-@use 'menu'
+// * tools
+@use '../../components/sass/variables' as va
+@use '../../components/sass/breakpoints' as bp
+@use '../../components/sass/mixins' as mx
 
+// * componets
+@use '../../components/sass/menu' 
+@use '../../components/sass/footer'
+@use '../../components/sass/button'
+
+// ! RESET
 *
     font-family: 'Roboto Condensed', sans-serif
     padding: 0
@@ -13,18 +20,16 @@ body
     background-size: cover
     overflow-x: hidden
 
+body[data-js-status="on-js"]
+    span[data-js-status="on-js"]
+        display: none
+
 .container
     display: grid
     grid-template-columns: va.$columns-10
     grid-template-rows: va.$rows-5
 
-@media (max-width: 999px)
+@include bp.mobileView
     .container
         display: flex
         flex-direction: column
-
-button
-    // display: none
-    position: fixed
-    right: 0
-    z-index: 1

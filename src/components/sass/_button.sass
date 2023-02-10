@@ -1,0 +1,26 @@
+@use 'mixins' as mx
+@use 'breakpoints' as bp
+
+.button-menu
+    display: none
+    position: fixed
+    top: 15px
+    right: 10px
+    z-index: 1
+    cursor: pointer
+    border: none
+    background: none
+    &::after, &::before, &-bar
+        @include mx.xButton
+        content: ""
+        transition: transform .3s
+    @include bp.mobileView
+        display: block
+
+.button-menu.active
+    &::before
+        transform: rotate(-45deg) translate(-8px, 8px)
+    .button-menu-bar
+        opacity: 0
+    &::after
+        transform: rotate(45deg) translate(-5px, -7px)
