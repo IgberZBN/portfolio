@@ -1,16 +1,27 @@
-export default class MobileNavbar {
-  constructor(button, menu, link) {
+export default class MobileMenu {
+  constructor(button, data, links) {
     this.button = document.querySelector(button);
-    this.menu = document.querySelector(menu);
-    this.link = document.querySelectorAll(link);
-    this.activeClass = 'active';
+    this.element = document.querySelector(data);
+    this.link = document.querySelectorAll(links);
+
+    this.currentValue = this.element.getAttribute('data-menu');
+
+    this.statusOff = 'off';
+    this.statusOn = 'on';
+    this.statusClose = 'close';
 
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    this.menu.classList.toggle(this.activeClass);
-    this.button.classList.toggle(this.activeClass);
+    this.currentValue =
+      this.currentValue === this.statusOff ? this.statusOn : this.statusOff;
+    this.setStatus();
+  }
+
+  setStatus() {
+    this.button.classList.toggle(this.statusClose);
+    this.element.setAttribute('data-menu', this.currentValue);
   }
 
   addClickEvent() {

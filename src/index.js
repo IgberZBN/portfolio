@@ -1,12 +1,12 @@
-import MobileNavbar from '../tests/js/test-menu.js';
+import MobileMenu from '../tests/js/test-menu.js';
 import JsStatus from '../tests/js/test.js';
 // js status
 const jsStatus = new JsStatus('[data-js-status]');
 jsStatus.init();
 // Menu
-const mobileNavbar = new MobileNavbar(
+const mobileMenu = new MobileMenu(
   '.button-menu',
-  '.menu',
+  '[data-menu]',
   '.hero-nav-link',
 );
-mobileNavbar.init();
+mobileMenu.init();

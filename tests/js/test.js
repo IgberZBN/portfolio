@@ -1,4 +1,3 @@
-// Mudar o valor do data-js-status
 export default class JsStatus {
   constructor(data) {
     this.data = document.querySelectorAll(data);
