@@ -1,0 +1,25 @@
+@use 'languagesIcons'
+
+#skills
+    ul
+        list-style-type: none
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        li
+            text-align: center
+            width: 100px
+            padding: 5px
+            margin: 10px 30px
+            border-radius: 7px
+            overflow: hidden
+            // background-color: rgba(255, 255, 255, .3)
+            i
+                font-size: 42px
+
+            p
+                font: 18px
+                transform: translateY(120%)
+                transition: transform .5s
+            &:hover p
+                transform: translateY(0)

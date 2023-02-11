@@ -7,6 +7,7 @@
 @use '../../components/sass/menu' 
 @use '../../components/sass/footer'
 @use '../../components/sass/button'
+@use '../../components/sass/main'
 
 // ! RESET
 *
@@ -30,6 +31,10 @@ body[data-js-status="on-js"]
     display: grid
     grid-template-columns: va.$columns-10
     grid-template-rows: va.$rows-5
+
+.main
+    grid-column: 4 / 11
+    grid-row: 1 / 6
 
 // ! Breakpoints
 @include bp.mobileView

@@ -1,0 +1,44 @@
+@use '../../components/sass/colorSchemeLanguages' as csl
+
+.java
+    color: csl.$java
+    i
+        background: linear-gradient(180deg, rgba(248,152,32,1) 55%, rgba(83,130,161,1) 45%)
+        -webkit-background-clip: text
+        -moz-background-clip: text
+        -webkit-text-fill-color: transparent
+        -moz-text-fill-color: transparent
+.javaScript
+    color: csl.$js
+    i
+        position: relative
+        &::after
+            content: ""
+            width: 36px
+            height: 35px
+            background-color: black
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            z-index: -1
+.css
+    color: csl.$css
+    i
+        background: linear-gradient(90deg, rgba(38,77,228,1) 50%, rgba(41,101,241,1) 50%)
+        -webkit-background-clip: text
+        -moz-background-clip: text
+        -webkit-text-fill-color: transparent
+        -moz-text-fill-color: transparent
+.html
+    color: csl.$html
+    i
+        background: linear-gradient(90deg, rgba(227,76,32,1) 50%, rgba(240,101,41,1) 50%)
+        -webkit-background-clip: text
+        -moz-background-clip: text
+        -webkit-text-fill-color: transparent
+        -moz-text-fill-color: transparent
+.sass
+    color: csl.$sass
+.bootstrap
+    color: csl.$bootstrap
