@@ -18,10 +18,12 @@
 body
     background: url('../../../public/assets/img/background.jpg') no-repeat center center
     background-size: cover
+    background-color: va.$dark-purple
     overflow-x: hidden
 
+// ! On JavaScript
 body[data-js-status="on-js"]
-    span[data-js-status="on-js"]
+    [data-js-status="on-js"]
         display: none
 
 .container
@@ -29,6 +31,7 @@ body[data-js-status="on-js"]
     grid-template-columns: va.$columns-10
     grid-template-rows: va.$rows-5
 
+// ! Breakpoints
 @include bp.mobileView
     .container
         display: flex
