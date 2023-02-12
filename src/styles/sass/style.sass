@@ -17,9 +17,9 @@
     box-sizing: border-box
 
 body
-    background: url('../../../public/assets/img/background.jpg') no-repeat center center
-    background-size: cover
     background-color: va.$dark-purple
+    // background: url('../../../public/assets/img/background.jpg') no-repeat center center
+    background-size: cover
     overflow-x: hidden
 
 // ! On JavaScript
@@ -35,6 +35,16 @@ body[data-js-status="on-js"]
 .main
     grid-column: 4 / 11
     grid-row: 1 / 6
+    padding: va.$pad
+    section
+        background-color: rgba(255,255,255, .3)
+        margin: 13px 0
+        padding: 10px
+        border-radius: 7px
+        h2
+            font-size: 28px
+    #about, #projects, #skills, #contact
+        @include mx.titleHover
 
 // ! Breakpoints
 @include bp.mobileView

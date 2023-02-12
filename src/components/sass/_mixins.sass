@@ -24,3 +24,23 @@
     background: #fff
     margin: 8px
     display: block
+
+@mixin titleHover
+    .hover-effect
+        display: inline-block
+        position: relative
+        overflow: hidden
+        &::before
+            content: ""
+            display: block
+            width: 100%
+            background-color: black
+            height: 2.7px
+            position: absolute
+            bottom: 0
+            transform: translateX(-110%)
+            transition: transform .5s
+
+    &:hover
+        span::before
+            transform: translateX(0)
