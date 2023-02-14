@@ -17,7 +17,7 @@
     box-sizing: border-box
 
 body
-    background-color: va.$dark-purple
+    // background-color: va.$dark-purple
     // background: url('../../../public/assets/img/background.jpg') no-repeat center center
     background-size: cover
     overflow-x: hidden
@@ -33,6 +33,9 @@ body[data-js-status="on-js"]
     grid-template-rows: va.$rows-5
 
 .main
+    // background: linear-gradient(295deg, rgba(35,35,46,1) 0%, rgba(56,56,121,1) 40%, rgba(56,56,121,1) 60%, rgba(35,35,46,1) 100%)
+    // background-size: 400% 400%
+    // animation: test 30s ease infinite
     grid-column: 4 / 11
     grid-row: 1 / 6
     padding: va.$pad
@@ -51,3 +54,11 @@ body[data-js-status="on-js"]
     .container
         display: flex
         flex-direction: column
+
+// @keyframes test
+    // 0%
+        // background-position: 0% 50%
+    // 50%
+        // background-position: 100% 50%
+    // 100%
+        // background-position: 0% 50%
