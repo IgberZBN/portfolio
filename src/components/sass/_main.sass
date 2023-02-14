@@ -1,3 +1,4 @@
+@use 'breakpoints' as bp
 @use 'languagesIcons'
 
 #skills
@@ -7,15 +8,17 @@
         justify-content: center
         flex-wrap: wrap
         li
-            text-align: center
-            width: 100px
+            @include bp.skillMobile
+                width: max(150px, 40%)
+            width: 20%
             padding: 5px
-            margin: 10px 30px
+            margin: 10px
             border-radius: 7px
+            text-align: center
             overflow: hidden
             // background-color: rgba(255, 255, 255, .3)
-            i
-                font-size: 42px
+            img
+                width: 42px
 
             p
                 font: 18px
