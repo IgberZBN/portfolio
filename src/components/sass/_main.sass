@@ -1,5 +1,6 @@
 @use 'breakpoints' as bp
 @use 'languagesIcons'
+@use 'mixins' as mx
 
 #skills
     ul
@@ -26,3 +27,81 @@
                 transition: transform .5s
             &:hover p
                 transform: translateY(0)
+
+#projects
+    .carousel
+        button:hover
+            cursor: pointer
+        img
+            width: 100%
+            object-fit: cover
+            position: absolute
+        &-content
+            width: clamp(250px, 52vw, 950px)
+            height: 310px
+            margin: 0 auto
+            position: relative
+            overflow: hidden
+            .project
+                position: relative
+                display: none
+                transition: left .2s
+                &-title
+                    top: 30px
+                    left: 50%
+                    padding: 6px
+                    font-size: clamp(18px, 5vw ,24px)
+                    position: absolute
+                    transform: translate(-50%,-50%)
+                    color: white
+                    background-color: rgba(35,35,35, .2)
+        &-buttons
+            button
+                font-size: 32px
+                height: 100%
+                padding: 10px
+                background: none
+                border: none
+                z-index: 2
+                position: absolute
+                top: 0
+                transition: color .5s, background .7s
+                &:hover
+                    color: white
+                    background: rgba(35,35,46,.2)
+            .btn-next
+                right: 0
+            .btn-previous
+                left: 0
+        .carousel-select
+            ul
+                display: flex
+                list-style-type: none
+                z-index: 2
+                position: absolute
+                bottom: 0
+                left: 50%
+                transform: translate(-50%, -50%)
+            li
+                margin: 0 8px
+            &-btn
+                padding: 9px
+                border-radius: 50%
+                border: none
+                background: rgba(255, 255, 255, .1)
+                transition: background .3s
+                &:hover
+                    background: rgba(255, 255, 255, .8)
+        .slider-active
+            @include mx.sliderPosition(0)
+        .slider-next
+            @include mx.sliderPosition(100%)
+        .slider-previous
+            @include mx.sliderPosition(-100%)
+        .slider-transition
+            display: none
+        .selected
+            transition: 0
+            z-index: 1
+        .btn-active
+            background: rgba(255, 255, 255, .8)
