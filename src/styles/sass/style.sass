@@ -16,6 +16,9 @@
     margin: 0
     box-sizing: border-box
 
+html
+    scroll-behavior: smooth
+
 body
     // background-color: va.$dark-purple
     // background: url('../../../public/assets/img/background.jpg') no-repeat center center
@@ -37,12 +40,13 @@ body[data-js-status="on-js"]
     // background: linear-gradient(295deg, rgba(35,35,46,1) 0%, rgba(56,56,121,1) 40%, rgba(56,56,121,1) 60%, rgba(35,35,46,1) 100%)
     // background-size: 400% 400%
     // animation: test 30s ease infinite
+    // background-color: va.$dark-purple
     grid-column: 2
     grid-row: 1 / 4
     padding: va.$pad
     // height: 2000px
     section
-        background-color: rgba(255,255,255, .3)
+        // background-color: rgba(255,255,255, .3)
         margin: 13px 0
         padding: 10px
         border-radius: 7px
@@ -53,12 +57,17 @@ body[data-js-status="on-js"]
 
 #contact
     .contact-content
-        height: 380px
+        // height: 380px
         display: flex
+        flex-wrap: wrap
         justify-content: space-around
-
+        iframe
+            margin-right: 25px
+            height: 410px
+        form
+            width: 40%
         .top
-            height: 40px
+            height: 50px
             margin-bottom: 10px
             label
                 display: inline-block
@@ -66,8 +75,53 @@ body[data-js-status="on-js"]
             width: 100%
             height: 300px
             resize: none
+            border-radius: 9px
+            border: 2px solid rgba(196, 196, 196, .8)
+            padding: 3px
+            font-size: 16px
+            border-bottom: 4px solid rgba(196, 196, 196, .4)
+            &:hover
+                background-color: #f3f3f3
+                border-color: #c4c4c4
+            &:focus
+                // border-color:
+                outline: none
+        label
+            width: 49%
         input
-            width: 180px
+            border-radius: 7px
+            width: 100%
+            padding: 7px
+            border: 2px solid rgba(196, 196, 196, .4)
+            border-bottom: 3px solid rgba(196, 196, 196, .4)
+            &:hover
+                background-color: #f3f3f3
+                border-color: #c4c4c4
+            &:focus
+                border-bottom-color: #b2b2b2
+                outline: none
+        button
+            width: 100%
+            padding: 5px
+            border-radius: 7px
+            border: none
+        @media(max-width: 1298px)
+            form
+                width: 60%
+        @include bp.mobileView
+            flex-direction: column
+            form
+                width: 100%
+            iframe
+                width: 100%
+                margin-bottom: 10px
+            .top
+                height: 110px
+            label
+                width: 100%
+            input
+                width: 100%
+
 // ! Breakpoints
 @include bp.mobileView
     .container
