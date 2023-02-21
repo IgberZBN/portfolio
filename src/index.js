@@ -1,6 +1,6 @@
-import MobileMenu from '../tests/js/test-menu.js';
-import JsStatus from '../tests/js/test.js';
-import Carousel from '../tests/js/test-carousel.js';
+import MobileMenu from './js/menu.js';
+import Carousel from './js/carousel.js';
+import JsStatus from './js/statusJs.js';
 // js status
 const jsStatus = new JsStatus('[data-js-status]');
 jsStatus.init();

@@ -1,0 +1,41 @@
+// * tools
+@use 'variables' as va
+@use 'breakpoints' as bp
+@use 'mixins' as mx
+
+// * componets
+@use 'menu' 
+@use 'footer'
+@use 'button'
+@use 'main'
+
+// ! RESET
+*
+    font-family: 'Roboto Condensed', sans-serif
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+body
+    background-size: cover
+    overflow-x: hidden
+
+.container
+    display: grid
+    grid-template-columns: 30vw 70vw
+    grid-template-rows: 80vh 20vh
+    position: relative
+
+// ! On JavaScript
+body[data-js-status="on-js"]
+    [data-js-status="on-js"]
+        display: none
+
+// ! Breakpoints
+@include bp.mobileView
+    .container
+        display: flex
+        flex-direction: column
