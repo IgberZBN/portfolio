@@ -2,40 +2,48 @@
 @use 'mixins' as mx
 @use 'breakpoints' as bp
 
-.footer
-    @include mx.menu
-    @include mx.flex
-    grid-column: 1
-    grid-row: 2
-    top: 80vh
+.foo
+    @include mx.linkHover
+    @include mx.linkReset
+    background-color: va.$bg-color
+
+    &-content
+        @include mx.flex(column, nowrap, space-around)
+        height: 100%
+        padding-top: 1em
+
     &-social
-        align-self: center
+
         ul
             @include mx.listReset
-            justify-content: center
-            width: 155.125px
-            padding: 3px 0
-            height: 40px
+            justify-content: space-around
+            width: min(260px, 70%)
+            height: 48px
+            margin: 0 auto
+            text-align: center
+
             li
-                margin: 0 12px
-                font-size: 28px
+                width: 42px
+                font-size: 2em
         a
-            color: va.$white
-            transition: .3s
-            display: inline-block
-            width: 32px
-            &:hover
-                font-size: 30px
-                color: rgba(255, 255, 255, .8)
-    &-text
-        span
-            display: block
+            transition: color .3s
+            &:hover, &:focus
+                font-size: 1.2em
+
+    &-texts
+        color: va.$primary-color
+        font-size: 1.3em
+        text-align: center
+
         a
-            color: va.$white
-            text-decoration: none
+            text-decoration: underline
+            transition: color .5s
+
             &:hover
                 text-decoration: underline dotted
 
-@include bp.mobileView
-    .footer
-        position: static
+    @include bp.monitorView
+        grid-column: 1
+        grid-row: 2
+        position: sticky
+        top: 80vh

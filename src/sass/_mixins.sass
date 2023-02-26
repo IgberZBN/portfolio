@@ -1,50 +1,126 @@
-@use 'variables' as va
+// @use 'variables' as va
 
-@mixin menu
-    background-color: va.$dark-purple
-    padding: va.$pad
-    position: sticky
+// @mixin menu
+//     background-color: va.$dark-purple
+//     padding: va.$pad
+//     position: sticky
+//     top: 0
+//     left: 0
+//     text-align: center
+//     color: va.$white
+
+// @mixin flex
+//     display: flex
+//     flex-direction: column
+//     justify-content: space-around
+
+// @mixin listReset
+//     list-style: none
+//     display: flex
+
+// @mixin xButton
+//     width: 32px
+//     height: 2px
+//     background: #fff
+//     margin: 8px
+//     display: block
+
+// @mixin titleHover
+//     .hover-effect
+//         display: inline-block
+//         position: relative
+//         overflow: hidden
+//         &::before
+//             content: ""
+//             display: block
+//             width: 100%
+//             background-color: #7888F3
+//             height: 2.7px
+//             position: absolute
+//             bottom: 0
+//             transform: translateX(-110%)
+//             transition: transform .5s
+
+//     &:hover
+//         span::before
+//             transform: translateX(0)
+
+// @mixin sliderPosition($left)
+//     left: $left
+//     display: block
+
+@use 'variables' as va
+@use 'breakpoints' as bp
+
+@mixin backgroundImg($img)
+    content: ""
+    z-index: -1
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
     top: 0
     left: 0
-    text-align: center
-    color: va.$white
+    background: url($img) no-repeat center center
+    background-size: cover
 
-@mixin flex
-    display: flex
-    flex-direction: column
-    justify-content: space-around
+@mixin titleHover
+    display: inline-block
+    position: relative
+
+    &:before
+        content: ""
+        width: 0
+        display: block
+        height: 3px
+        border-radius: 2px
+        background-color: va.$hover-color
+        position: absolute
+        bottom: 0
+        right: 50%
+        transform: translate(50%)
+        transition: width .5s
+
+@mixin linkReset
+    a
+        color: va.$primary-color
+        text-decoration: none
+
+@mixin linkHover
+    a:hover, a:focus
+        color: va.$hover-color
 
 @mixin listReset
     list-style: none
     display: flex
+    justify-content: center
+    @include linkReset
 
-@mixin xButton
-    width: 32px
-    height: 2px
-    background: #fff
-    margin: 8px
+@mixin flex($direction, $wrap, $justifyC)
+    display: flex
+    flex-direction: $direction
+    flex-wrap: $wrap
+    justify-content: $justifyC
+
+@mixin flexCenter
+    height: 100%
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-content: center
+
+@mixin defaultPs($width, $height)
+    content: ""
     display: block
+    width: $width
+    height: $height
 
-@mixin titleHover
-    .hover-effect
-        display: inline-block
-        position: relative
-        overflow: hidden
-        &::before
-            content: ""
-            display: block
-            width: 100%
-            background-color: black
-            height: 2.7px
-            position: absolute
-            bottom: 0
-            transform: translateX(-110%)
-            transition: transform .5s
-
-    &:hover
-        span::before
+@mixin menuAnimation
+    @include bp.mobileView
+        .menu
+            position: fixed
+            top: 0
+            transform: translateX(-120%)
+            transition: transform .3s ease-in
+        .menu.active
             transform: translateX(0)
-
-@mixin sliderPosition($left)
-    left: $left
-    display: block

@@ -13,209 +13,217 @@
         rel="stylesheet">
     <!-- ! Link style -->
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Document</title>
+    <title>Igber Portfolio</title>
 </head>
 
-<body data-js-status="no-js">
-    <!-- ! container -->
-    <button class="button-menu">
-        <div class="button-menu-bar"></div>
+<body>
+    <button class="btn menu-toggle" data-js-toggle>
+        <div class="menu-toggle-bar"></div>
     </button>
-    <div class="container" id="container">
+    <div class="container">
         <!-- ! header -->
-        <header class="left hero menu" data-menu="off">
-            <div class="tes">
-                <img class="hero-image" src="assets/img/avatar.jpeg" alt="Avatar">
-                <h1 class="hero-title">
-                    <strong class="hero-title-strong">Igber Benitez</strong>.
-                    <span class="hero-title-span">
-                        Futuro <strong class="hero-title-strong">Desenvolvedor Full-stack</strong>.
-                    </span>
-                </h1>
-            </div>
-            <nav class="hero-nav">
-                <ul>
-                    <li>
-                        <a class="hero-nav-link" href="#about">Sobre mim</a>
-                    </li>
-                    <li>
-                        <a class="hero-nav-link" href="#projects">Projetos</a>
-                    </li>
-                    <li>
-                        <a class="hero-nav-link" href="#skills">Habilidades</a>
-                    </li>
-                    <li>
-                        <a class="hero-nav-link" href="#contact">Contato</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <!-- ! main -->
-        <main class="right main">
-            <!-- * about -->
-            <section class="about" id="about">
-                <header class="about-title">
-                    <span class="hover-effect">
-                        <h2 class="title">Sobre mim</h2>
-                    </span>
-                </header>
-                <p class="about-text">
-                    Meu nome é <strong>Igber</strong>, tenho 18 anos e sempre tive paixão por tecnologia, desde os
-                    meus 3 anos de idade, quando tive meu primeiro contato com computadores. Atualmente, estou estudando
-                    desenvolvimento <strong>front-end</strong>, mas o meu objetivo é ser um desenvolvedor
-                    full-stack.
-                </p>
-            </section>
-            <!-- * projects -->
-            <section class="projects" id="projects">
-                <header class="projects-title">
-                    <span class="hover-effect">
-                        <h2 class="title">Projetos</h2>
-                    </span>
-                </header>
-                <section class="carousel">
-                    <div class="carousel-content">
-                        <div class="carousel-images">
-                            <div class="project">
-                                <a href="https://igberzbn.github.io/cifra-de-cesar/">
-                                    <img class="carousel-img" src="assets/img/julio-cesar.jpg" width="600px"
-                                        height="310px" alt="julio cesar escultura">
-                                </a>
-                                <h3 class="project-title">Cifra de cesar</h3>
-                            </div>
-                            <div class="project">
-                                <a href="https://github.com/IgberZBN/layout-fixo-vs-layout-liquido">
-                                    <img class="carousel-img" src="assets/img/layout.jpg" width="600px" height="310px"
-                                        alt="Layout exemplo">
-                                </a>
-                                <h3 class="project-title">Layout Fixo x Layout Liquido</h3>
-                            </div>
-                            <div class="project">
-                                <a href="https://github.com/IgberZBN/portfolio">
-                                    <img class="carousel-img" src="assets/img/avatar.jpeg" width="600px" height="310px"
-                                        alt="Avatar">
-                                </a>
-                                <h3 class="project-title">portfolio</h3>
-                            </div>
-                        </div>
-                        <div class="carousel-buttons">
-                            <button class="carouse-buttons-btn btn-next">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                            <button class="carouse-buttons-btn btn-previous">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </button>
-                        </div>
-                        <div class="carousel-select">
-                            <ul>
-                                <li>
-                                    <button class="carousel-select-btn" data-js-select="0"></button>
-                                </li>
-                                <li>
-                                    <button class="carousel-select-btn" data-js-select="1"></button>
-                                </li>
-                                <li>
-                                    <button class="carousel-select-btn" data-js-select="2"></button>
-                                </li>
-                            </ul>
-                        </div>
+        <header class="hero menu">
+            <div class="hero-content">
+                <div class="hero-content-main">
+                    <div class="hero-image">
+                        <img src="assets/img/avatar.jpeg" alt="Avatar">
                     </div>
-                </section>
-            </section>
-            <!-- * skills -->
-            <section class="skills" id="skills">
-                <header class="skills-title">
-                    <span class="hover-effect">
-                        <h2 class="title">Habilidades</h2>
-                    </span>
-                </header>
-                <div>
+                    <div class="hero-texts">
+                        <h1 class="hero-title">
+                            <strong>Igber</strong> Benitez De Souza
+                        </h1>
+                        <p>
+                            Futuro desenvolvedor <strong>Full-Stack</strong>
+                        </p>
+                    </div>
+                </div>
+                <nav class="hero-nav">
                     <ul>
-                        <li class="javaScript"><img src="./assets/img/icon_js.svg" alt="">
-                            <p>JavaScript</p>
+                        <li>
+                            <a class="hero-nav-links" href="#about" tabindex="1">
+                                <span>Sobre</span>
+                            </a>
                         </li>
-                        <li class="java"><img src="./assets/img/icon_java.svg" alt="">
-                            <p>Java</p>
+                        <li>
+                            <a class="hero-nav-links" href="#projects" tabindex="2">
+                                <span>Projetos</span>
+                            </a>
                         </li>
-                        <li class="sass"><img src="./assets/img/icon_sass.svg" alt="">
-                            <p>Sass</p>
-                        </li>
-                        <li class="css"><img src="./assets/img/icon_css.svg" alt="">
-                            <p>CSS3</p>
-                        </li>
-                        <li class="html"><img src="./assets/img/icon_html.svg" alt="">
-                            <p>HTML5</p>
-                        </li>
-                        <li class="bootstrap"><img src="./assets/img/icon_bootstrap.svg" alt="">
-                            <p>Bootstrap</p>
-                        </li>
-                        <li class="mysql"><img src="./assets/img/icon_mysql.svg" alt="">
-                            <p>MySQL</p>
-                        </li>
-                        <li class="git"><img src="./assets/img/icon_git.svg" alt="">
-                            <p>Git</p>
+                        <li>
+                            <a class="hero-nav-links" href="#skills" tabindex="3">
+                                <span>Habilidades</span>
+                            </a>
                         </li>
                     </ul>
-                </div>
-            </section>
-            <!-- * Contact -->
-            <section class="contact" id="contact">
-                <header class="contact-title">
-                    <span class="hover-effect">
-                        <h2 class="title">Contato</h2>
-                    </span>
-                </header>
-                <div class="contact-content">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d491462.06470348843!2d-48.0773026046179!3d-15.775065597234457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a3af2108804d7%3A0x3eba2390c9145056!2sBrasilia%20-%20Federal%20District!5e0!3m2!1sen!2sbr!4v1676771811232!5m2!1sen!2sbr"
-                        width="500" style="border:0;" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    <form action="">
-                        <div class="top">
-                            <label for="inName">
-                                <p>Nome:</p>
-                                <input type="text" id="inName" placeholder="Digite seu nome">
-                            </label>
-                            <label for="inEmail">
-                                <p>Email:</p>
-                                <input type="email" id="inEmail" placeholder="Digite seu email">
-                            </label>
-                        </div>
-                        <label class="testando" for="inMensagem">
-                            <p>Mensagem:</p>
-                            <textarea id="inMensagem"></textarea>
-                        </label>
-                        <button type="submit">Enviar</button>
-                    </form>
-                </div>
-            </section>
+                </nav>
+            </div>
+        </header>
+        <!-- ! main -->
+        <main class="main">
+            <div class="main-content">
+                <!-- * about -->
+                <section class="about" id="about">
+                    <div class="about-content">
+                        <header class="about-title title">
+                            <h2><span class="title-effect">Sobre mim</span></h2>
+                        </header>
+                        <p class="about-content-text">
+                            Meu nome é <strong>Igber</strong>, tenho 18 anos e sempre tive paixão por tecnologia, desde
+                            os
+                            meus 3 anos de idade, quando tive meu primeiro contato com computadores. Atualmente, estou
+                            estudando
+                            desenvolvimento <strong>front-end</strong>, mas o meu objetivo é ser um desenvolvedor
+                            full-stack.
+                        </p>
+                    </div>
+                </section>
+                <!-- * projects -->
+                <section class="projects" id="projects">
+                    <div class="projects-content">
+                        <header class="projects-title title">
+                            <h2><span class="title-effect">Projetos</span></h2>
+                        </header>
+                        <section class="carousel">
+                            <div class="carousel-content">
+                                <div class="carousel-projects">
+                                    <div class="project in-project">
+                                        <img class="project-image" src="assets/img/em projeto" alt="Em projeto">
+                                        <h4 class="project-name">Clock</h4>
+                                        <div class="project-links">
+                                            <p>Em projeto</p>
+                                        </div>
+                                    </div>
+                                    <div class="project">
+                                        <img class="project-image" src="assets/img/Cifra de cesar.png"
+                                            alt="Cifra de cesar">
+                                        <h4 class="project-name">Cifra de cesar</h4>
+                                        <div class="project-links">
+                                            <a href="https://github.com/IgberZBN/cifra-de-cesar"
+                                                title="Repositorio do projeto" target="_blank">
+                                                <i class="fa-brands fa-github"></i>
+                                            </a>
+                                            <a href="https://igberzbn.github.io/cifra-de-cesar/" title="Site do projeto"
+                                                target="_blank">
+                                                <i class="fa-solid fa-up-right-from-square"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="project in-project">
+                                        <img class="project-image" src="assets/img/em projeto" alt="Em projeto">
+                                        <h4 class="project-name">Gerador de QR Code</h4>
+                                        <div class="project-links">
+                                            <p>Em projeto</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-btns">
+                                    <button class="btn btn-next" type="button" data-js-slide="next">
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </button>
+                                    <button class="btn btn-previous" type="button" data-js-slide="previous">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                    </button>
+                                </div>
+                                <div class="carousel-select">
+                                    <button class="btn btn-select" data-js-select="0" type="button"></button>
+                                    <button class="btn btn-select" data-js-select="1" type="button"></button>
+                                    <button class="btn btn-select" data-js-select="2" type="button"></button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <!-- * skills -->
+                <section class="skills" id="skills">
+                    <div class="skills-content">
+                        <header class="skills-title title">
+                            <h2><span class="title-effect">Habilidades</span></h2>
+                        </header>
+                        <ul class="skills-container">
+                            <li>
+                                <div class="html">
+                                    <img class="skill-icon" src="assets/img/icon_html.svg" alt="Html icone">
+                                    <p class="skill-name">HTML</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="css">
+                                    <img class="skill-icon" src="assets/img/icon_css.svg" alt="Css3 icone">
+                                    <p class="skill-name">CSS</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="javascript">
+                                    <img class="skill-icon" src="assets/img/icon_js.svg" alt="JavaScript Icone">
+                                    <p class="skill-name">JavaScript</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="sass">
+                                    <img class="skill-icon" src="assets/img/icon_sass.svg" alt="Sass Icone">
+                                    <p class="skill-name">Sass</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bootstrap">
+                                    <img class="skill-icon" src="assets/img/icon_bootstrap.svg" alt="Bootstrap icone">
+                                    <p class="skill-name">Bootstrap</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="git">
+                                    <img class="skill-icon" src="assets/img/icon_git.svg" alt="Git icone">
+                                    <p class="skill-name">Git</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="java">
+                                    <img class="skill-icon" src="assets/img/icon_java.svg" alt="Java Icone">
+                                    <p class="skill-name">Java</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="mysql">
+                                    <img class="skill-icon" src="assets/img/icon_mysql.svg" alt="MySQL icone">
+                                    <p class="skill-name">MySQL</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
         </main>
         <!-- ! footer -->
-        <footer class="left footer" id="footer">
-            <nav class="footer-social">
-                <ul>
-                    <li>
-                        <a href="#">
-                            <i class="fa-brands fa-linkedin"></i><span data-js-status="no-js">Linkedin</span>
+        <footer class="foo">
+            <div class="foo-content">
+                <nav class="foo-social">
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/igber-benitez-de-souza-3b2752231/" target="_blank"
+                                title="Meu linkedin" tabindex="4">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </a>
+                        </li>
+                        <li><a href="https://github.com/IgberZBN" target="_blank" title="Meu github" tabindex="5">
+                                <i class="fa-brands fa-github"></i>
+                            </a>
+                        </li>
+                        <li><a href="https://www.youtube.com/channel/UCystP7tJJZvkJq7_QAm_HFw" target="_blank"
+                                title="Meu youtube" tabindex="6">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="foo-texts">
+                    <p>&copy; Igber Benitez</p>
+                    <p>
+                        <a href="https://github.com/IgberZBN/projetos-simples/tree/main/strata" target="_blank"
+                            title="Projeto Strata" tabindex="7">
+                            Inpiração do projeto
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/IgberZBN/portfolio">
-                            <i class="fa-brands fa-github"></i><span data-js-status="no-js">Github</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.youtube.com/channel/UCystP7tJJZvkJq7_QAm_HFw">
-                            <i class="fa-brands fa-youtube"></i><span data-js-status="no-js">Youtube</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <p class="footer-text">
-                &copy;Igber Benitez <span>Inspiração do projeto retirado do
-                    <a href="https://www.udemy.com/course/curso-web-design-fundamentos-aprenda-html-css-e-javascript/">
-                        curso serfrontend</a></span>
-            </p>
+                    </p>
+                </div>
+            </div>
         </footer>
     </div>
     <!-- ! link fontawesome -->

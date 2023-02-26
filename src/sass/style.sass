@@ -1,41 +1,32 @@
 // * tools
 @use 'variables' as va
-@use 'breakpoints' as bp
 @use 'mixins' as mx
+@use 'breakpoints' as bp
 
-// * componets
-@use 'menu' 
+// * components
+@use 'menu'
 @use 'footer'
 @use 'button'
 @use 'main'
 
-// ! RESET
+// ! resets
 *
     font-family: 'Roboto Condensed', sans-serif
     padding: 0
     margin: 0
     box-sizing: border-box
 
+body
+    overflow-x: hidden
+    font-size: 16px
+
 html
     scroll-behavior: smooth
 
-body
-    background-size: cover
-    overflow-x: hidden
-
+// * container
 .container
-    display: grid
-    grid-template-columns: 30vw 70vw
-    grid-template-rows: 80vh 20vh
-    position: relative
-
-// ! On JavaScript
-body[data-js-status="on-js"]
-    [data-js-status="on-js"]
-        display: none
-
-// ! Breakpoints
-@include bp.mobileView
-    .container
-        display: flex
-        flex-direction: column
+    @include bp.monitorView
+        display: grid
+        grid-template-columns: 30vw 69.8vw
+        grid-template-rows: 80vh 20vh
+        position: relative

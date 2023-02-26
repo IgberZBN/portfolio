@@ -1,186 +1,241 @@
 @use 'breakpoints' as bp
-@use 'languagesIcons'
 @use 'mixins' as mx
 @use 'variables' as va
 
+// ! main
+
 .main
-    grid-column: 2
-    grid-row: 1 / 4
-    padding: va.$pad
-    section
-        margin: 13px 0
-        padding: 10px
-        border-radius: 7px
-        h2
-            font-size: 28px
-    #about, #projects, #skills, #contact
+    color: va.$primary-color
+
+    .title
+        margin-bottom: 1em
+
+    .title-effect
         @include mx.titleHover
 
-#skills
-    ul
-        list-style-type: none
-        display: flex
-        justify-content: center
-        flex-wrap: wrap
-        li
-            @include bp.skillMobile
-                width: max(150px, 40%)
-            width: 20%
-            padding: 5px
-            margin: 10px
-            border-radius: 7px
-            text-align: center
-            overflow: hidden
-            background-color: rgba(255, 255, 255, .3)
-            img
-                width: 42px
+    h2
+        font-size: 1.8em
 
-            p
-                font: 18px
-                transform: translateY(120%)
-                transition: transform .5s
-            &:hover p
-                transform: translateY(0)
+// * about
 
-#projects
-    .carousel
-        button:hover
-            cursor: pointer
-        img
+.about
+    height: 100vh
+    position: relative
+    padding: 1em
+
+    &-content
+        @include mx.flexCenter
+        text-shadow: 2px 1px black
+        padding: 1em
+        text-align: center
+
+        p
+            font-size: 1.4em
+            line-height: 1.2em
+
+    &:hover
+        .title-effect:before
             width: 100%
-            object-fit: cover
-            position: absolute
+
+    &:before
+        @include mx.backgroundImg('../../../public/assets/img/background1.jpg')
+        background-attachment: fixed
+        filter: brightness(.4)
+
+// * projects
+
+.projects
+    background-color: va.$bg-color
+    padding: 1em
+
+    &:hover
+        .title-effect:before
+            width: 100%
+
+    .carousel
         &-content
-            width: clamp(250px, 52vw, 950px)
-            height: 310px
-            margin: 0 auto
             position: relative
-            overflow: hidden
-            .project
-                position: relative
-                display: none
-                transition: left .2s
-                &-title
-                    top: 30px
-                    left: 50%
-                    padding: 6px
-                    font-size: clamp(18px, 5vw ,24px)
-                    position: absolute
-                    transform: translate(-50%,-50%)
-                    color: white
-                    background-color: rgba(35,35,35, .2)
-        &-buttons
-            button
-                font-size: 32px
+            width: min(100%, 1000px)
+            height: 400px
+            margin: 0 auto
+
+        .btn
+            cursor: pointer
+
+        &-projects
+
+        .project
+            height: 400px
+            display: none
+
+            &-image
+                width: 100%
                 height: 100%
-                padding: 10px
+                object-fit: cover
+                transition: filter .2s ease-in
+                position: absolute
+
+            &-name
+                font-size: clamp(1em, 5vw, 1.8em)
+                position: absolute
+                top: 10px
+                left: 50%
+                background-color: rgb(0, 0, 0, .5)
+                padding: 5px
+                transform: translate(-50%)
+
+            &-links
+                @include mx.linkReset
+                @include mx.linkHover
+                @include mx.flexCenter
+                flex-direction: row
+                font-size: 2em
+                position: absolute
+                top: 50%
+                left: 50%
+                transform: translate(-50%,-50%)
+                opacity: .2
+                transition: opacity .4s ease-in-out
+                height: 70px
+
+                a
+                    text-align: center
+                    display: inline-block
+                    width: 42px
+                    height: 46px
+                    margin: 10px
+
+                    &:hover
+                        font-size: 1.1em
+
+            &:hover .project-image
+                filter: brightness(.4) blur(2px)
+
+            &:hover .project-links
+                opacity: 1
+
+        .project.slide-active
+            display: block
+
+        .in-project
+            filter: grayscale(.5) blur(.5px) brightness(.8)
+
+        &-btns
+
+            .btn
+                color: rgba(248, 248, 255, .5)
+                font-size: 1.9em
                 background: none
                 border: none
-                z-index: 2
                 position: absolute
-                top: 0
-                transition: color .5s, background .7s
-                &:hover
-                    color: white
-                    background: rgba(35,35,46,.2)
+                top: 50%
+                transform: translate(0, -50%)
+                height: 100%
+                width: 40px
+
             .btn-next
                 right: 0
+
+                &:hover
+                    background-color: rgba(0, 0, 0, .5)
+                    color: va.$primary-color
+
             .btn-previous
                 left: 0
-        .carousel-select
-            ul
-                display: flex
-                list-style-type: none
-                z-index: 2
-                position: absolute
-                bottom: 0
-                left: 50%
-                transform: translate(-50%, -50%)
-            li
-                margin: 0 8px
-            &-btn
-                padding: 9px
-                border-radius: 50%
-                border: none
-                background: rgba(255, 255, 255, .1)
-                transition: background .3s
-                &:hover
-                    background: rgba(255, 255, 255, .8)
-        .slider-active
-            @include mx.sliderPosition(0)
-        .slider-next
-            @include mx.sliderPosition(100%)
-        .slider-previous
-            @include mx.sliderPosition(-100%)
-        .slider-transition
-            display: none
-        .selected
-            transition: 0
-            z-index: 1
-        .btn-active
-            background: rgba(255, 255, 255, .8)
 
-#contact
-    .contact-content
-        display: flex
-        flex-wrap: wrap
+                &:hover
+                    background-color: rgba(0, 0, 0, .5)
+                    color: va.$primary-color
+
+        &-select
+            position: absolute
+            bottom: 15px
+            left: 50%
+            transform: translate(-50%)
+
+            .btn
+                background: rgba(248, 248, 255, .5)
+                margin: 0 7px
+                border: none
+                width: 25px
+                height: 25px
+                border-radius: 50%
+                transition: background-color .2s
+
+                &:hover
+                    background-color: va.$primary-color
+
+        .btn-select.slide-active
+            background-color: va.$primary-color
+
+// * skills
+
+.skills
+    background-color: va.$bg-color
+    padding: 1em
+
+    &:hover
+        .title-effect:before
+            width: 100%
+
+    .skills-container
+        @include mx.listReset
         justify-content: space-around
-        iframe
-            margin-right: 25px
-            height: 410px
-        form
+        text-align: center
+        flex-wrap: wrap
+
+        li
             width: 40%
-        .top
-            height: 50px
-            margin-bottom: 10px
-            label
-                display: inline-block
-        textarea
-            width: 100%
-            height: 300px
-            resize: none
-            border-radius: 9px
-            border: 2px solid rgba(196, 196, 196, .8)
-            padding: 3px
-            font-size: 16px
-            border-bottom: 4px solid rgba(196, 196, 196, .4)
-            &:hover
-                background-color: #f3f3f3
-                border-color: #c4c4c4
-            &:focus
-                outline: none
-        label
-            width: 49%
-        input
-            border-radius: 7px
-            width: 100%
-            padding: 7px
-            border: 2px solid rgba(196, 196, 196, .4)
-            border-bottom: 3px solid rgba(196, 196, 196, .4)
-            &:hover
-                background-color: #f3f3f3
-                border-color: #c4c4c4
-            &:focus
-                border-bottom-color: #b2b2b2
-                outline: none
-        button
-            width: 100%
-            padding: 5px
-            border-radius: 7px
-            border: none
-        @media(max-width: 1298px)
-            form
-                width: 60%
-        @include bp.mobileView
-            flex-direction: column
-            form
-                width: 100%
-            iframe
-                width: 100%
-                margin-bottom: 10px
-            .top
-                height: 110px
-            label
-                width: 100%
-            input
-                width: 100%
+            margin-bottom: 1em
+
+            div
+                background-color: rgba(248, 248, 255, .2)
+                border-radius: 7px
+                padding: 1em
+                width: min(160px, 100%)
+                margin: 0 auto
+                overflow-y: hidden
+                transition: background-color .3s
+
+                &:hover
+                    background-color: rgba(248, 248, 255, .5)
+
+                &:hover .skill-name
+                    transform: translateY(0)
+
+    .skill-name
+        transform: translateY(190%)
+        transition: transform .3s ease-in
+
+    .skill-icon
+        width: 62px
+        margin-bottom: 5px
+
+    .html
+        color: va.$icon-color-html
+    .javascript
+        color: va.$icon-color-js
+    .css
+        color: va.$icon-color-css
+    .sass
+        color: va.$icon-color-sass
+    .bootstrap
+        color: va.$icon-color-bootstrap
+    .git
+        color: va.$icon-color-git
+    .java
+        color: va.$icon-color-java
+    .mysql
+        color: va.$icon-color-mysql
+
+// ! media query
+
+@include bp.monitorView
+    .main
+        grid-column: 2
+        grid-row: 1 / 4
+
+    .about
+        .about-content-text
+            margin: 0 auto
+            width: 80%

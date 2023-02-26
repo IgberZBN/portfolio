@@ -1,28 +1,35 @@
 @use 'mixins' as mx
 @use 'breakpoints' as bp
+@use 'variables' as va
 
-.button-menu
-    display: none
-    padding: 6px
+.menu-toggle
+    z-index: 2
+    background: none
+    border: none
     position: fixed
     top: 15px
-    right: 10px
-    z-index: 4
+    right: 15px
     cursor: pointer
-    border: none
-    border-radius: 50%
-    background: #23232e
-    &::after, &::before, &-bar
-        @include mx.xButton
-        content: ""
-        transition: transform .3s
-    @include bp.mobileView
-        display: block
 
-.button-menu.close
-    &::before
-        transform: rotate(-45deg) translate(-8px, 8px)
-    .button-menu-bar
+    &:after, &:before, &-bar
+        content: ""
+        margin: 10px
+        display: block
+        width: 32px
+        height: 2px
+        background-color: va.$primary-color
+        transition: transform .3s
+
+.menu-toggle.active
+    &:before
+        transform: rotate(-45deg) translate(-10px, 10px)
+
+    .menu-toggle-bar
         opacity: 0
-    &::after
+
+    &:after
         transform: rotate(45deg) translate(-5px, -7px)
+
+@include bp.monitorView
+    .menu-toggle
+        display: none

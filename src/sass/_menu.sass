@@ -3,54 +3,66 @@
 @use 'breakpoints' as bp
 
 .hero
-    @include mx.menu
-    @include mx.flex
-    grid-column: 1
-    grid-row: 1
-    z-index: 3
-    &-image
-        width: clamp(150px, 15vw, 220px)
+    z-index: 1
+    text-align: center
+    width: 100vw
+    height: 100vh
+    background-color: va.$bg-color
+
+    &-content
+        @include mx.flex(column, nowrap, space-around)
+        height: 100%
+
+    img
         border-radius: 50%
-    &-title
-        &-span
-            display: block
-            font-size: 22px
+        width: clamp(10em, 15vw, 220px)
+
+    &-texts
+        color: va.$primary-color
+
+        h1
+            font-size: clamp(1.7em, 5vw, 2em)
+
+        p
+            font-size: clamp(1.1em, 3vw, 1.3em)
+
     &-nav
         ul
             @include mx.listReset
             flex-direction: column
-            justify-content: space-between
-            height: clamp(200px, 14.7vw, 300px)
-            a
-                font-size: clamp(1rem, 1.1vw, 1.3rem)
-                letter-spacing: .7px
-                display: inline-block
-                text-transform: uppercase
-                text-decoration: none
-                color: va.$white
-                &:hover
-                    color: rgba(255, 255, 255, .8)
-                    &:after
-                        opacity: 2
-                        content: ""
-                        width: 100%
-                        height: 3px
-                        border-radius: 5px
-                        display: block
-                        background-color: va.$white
-                &:after
-                    transition: width .7s
-                    content: ""
-                    width: 0%
-                    height: 3px
-                    display: block
 
-@include bp.mobileView
-    .hero
-        position: fixed
-        width: 100vw
-        height: 100vh
-        transform: translateX(-100%)
-        transition: transform .3s ease-in
-    .hero[data-menu="on"]
-        transform: translateX(0)
+        li
+            margin-bottom: 12px
+            padding: 1em
+
+        span
+            display: inline-block
+            position: relative
+            overflow: hidden
+
+            &:before
+                @include mx.defaultPs(100%, 2px)
+                background-color: va.$primary-color
+                position: absolute
+                bottom: 0
+                transform: translateX(-110%)
+                transition: all .5s
+
+        a
+            padding: .5em
+            display: inline-block
+            font-size: 1.5em
+            width: 140px
+
+            &:hover span:before, &:focus span:before
+                transform: translateX(0)
+
+    @include bp.monitorView
+        grid-row: 1
+        grid-column: 1
+        width: auto
+        height: auto
+        position: sticky
+        top: 0
+
+@include mx.menuAnimation
