@@ -211,7 +211,7 @@
 }
 
 .about {
-  height: 100vh;
+  height: 100dvh;
   position: relative;
   padding: 1em;
 }
@@ -238,7 +238,7 @@
   z-index: -1;
   display: block;
   width: 100%;
-  height: -webkit-fill-available;
+  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
